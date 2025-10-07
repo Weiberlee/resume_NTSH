@@ -1,18 +1,99 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant">
 <head>
+    <meta charset="UTF-8">
     <title>讀書計畫</title>
+    <style>
+        body {
+            font-family: "Noto Sans TC", "微軟正黑體", sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2196f3;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin-top: 8px;
+            opacity: 0.9;
+        }
+
+        main {
+            max-width: 700px;
+            margin: 40px auto;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 30px 40px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 15px 0;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            background-color: #f0f4c3;
+            color: #2e7d32;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: bold;
+            transition: all 0.25s ease;
+        }
+
+        a:hover {
+            background-color: #aed581;
+            color: #1b5e20;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
-    <h1>新北高中李偉博的讀書計畫</h1>
-    <ul>
-        <li><a href="/competition">競賽經驗</a></li>
-        <li><a href="/activities">課外活動</a></li>
-        <li><a href="/leadership">幹部經驗</a></li>
-        <li><a href="/club">社團經驗</a></li>
-        <li><a href="/electives">多元選修課程</a></li>
-        <li><a href="/ai">AI應用</a></li>
-    </ul>
+    <header>
+        <h1>我的讀書計畫</h1>
+        <p>新北高中30905李偉博</p>
+    </header>
+
+    <main>
+        <ul>
+            <li><a href="/competition">🏆 競賽經驗</a></li>
+            <li><a href="/activities">🎭 課外活動</a></li>
+            <li><a href="/leadership">👑 幹部經驗</a></li>
+            <li><a href="/club">🎯 社團經驗</a></li>
+            <li><a href="/electives">📚 多元選修課程</a></li>
+            <li><a href="/ai">🤖 AI應用</a></li>
+        </ul>
+    </main>
+
+    <footer>
+        &copy; 2025 新北高中30905 李偉博 — All rights reserved.
+    </footer>
 </body>
 </html>
