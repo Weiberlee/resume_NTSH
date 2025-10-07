@@ -1,11 +1,11 @@
 
 from flask import Flask, render_template
 
-app = Flask(__30905__)
+app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return Flask('index.html')
+    return render_template('index.html')
 
 @app.route('/competition')
 def competition():
