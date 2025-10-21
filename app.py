@@ -1,45 +1,9 @@
 import os
-from flask import Flask, render_template
-
-app = Flask(__name__)
-
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-@app.route('/competition')
-def competition():
-    return render_template('competition.html')
-
-@app.route('/activities')
-def activities():
-    return render_template('activities.html')
-
-@app.route('/leadership')
-def leadership():
-    return render_template('leadership.html')
-
-@app.route('/club')
-def club():
-    return render_template('club.html')
-
-@app.route('/electives')
-def electives():
-    return render_template('electives.html')
-
-@app.route('/ai')
-def ai():
-    return render_template('ai.html')
-
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
-
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-# 建立問答集 Store questions and answers in a simple list for demonstration purposes
+# 問答集
 questions_answers = {
     "蘋果": "apple",
     "apple": "蘋果",
@@ -75,21 +39,46 @@ questions_answers = {
     "sad": "難過"
 }
 
-
-
-# 首頁/的處理
+# --- 各個網頁路由設定 ---
 @app.route('/')
 def index():
     return render_template('index.html', QA=questions_answers)
 
-# 網頁/ask的處理
+@app.route('/competition')
+def competition():
+    return render_template('competition.html')
+
+@app.route('/activities')
+def activities():
+    return render_template('activities.html')
+
+@app.route('/leadership')
+def leadership():
+    return render_template('leadership.html')
+
+@app.route('/club')
+def club():
+    return render_template('club.html')
+
+@app.route('/electives')
+def electives():
+    return render_template('electives.html')
+
+@app.route('/ai')
+def ai():
+    return render_template('ai.html')
+
+# --- 問答功能 ---
 @app.route('/ask', methods=['GET', 'POST'])
 def ask_question():
     if request.method == 'POST':
-        q = request.form['question']
-        a = questions_answers[q]
+        q = request.form.get('question', '').strip()
+        a = questions_answers.get(q, "抱歉，我不知道這個詞的翻譯。")
         return render_template('ask.html', question=q, answer=a)
+    
     return render_template('ask.html', question="", answer="")
 
+# --- 主程式 ---
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    port = int(os.environ.get('PORT', 8080))
+    app.run(host='0.0.0.0', port=port)
